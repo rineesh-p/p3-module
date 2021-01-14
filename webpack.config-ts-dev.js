@@ -5,15 +5,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
 
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
-const OfflinePlugin = require('offline-plugin');
-const { HashedModuleIdsPlugin } = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-
-
-const path = require("path");
+// const WebpackPwaManifest = require('webpack-pwa-manifest');
+// const OfflinePlugin = require('offline-plugin');
 
 module.exports = {
   mode: "development",
@@ -173,8 +167,10 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: ["node_modules", "game"],
-    alias: { phaser: path.resolve("lib", "phaser.js") },
+    modules: ["node_modules", "game", 'lib'],
+    alias: {
+      
+    },
     extensions: [".js", ".ts"],
     // mainFields: ['browser', 'jsnext:main', 'main'],
   },

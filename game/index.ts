@@ -1,7 +1,6 @@
-/// <reference path="../phaser/types/phaser.d.ts" />
 
 import { Logger } from "./logger";
-import * as Phaser from 'phaser';
+import Phaser from '../lib/phaser';
 
 Logger.log ("Initializing..");
 

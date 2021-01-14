@@ -235,9 +235,6 @@ module.exports = {
     modules: ["node_modules", "game", "lib"],
     extensions: [".js", ".ts"],
   },
-  // devtool: "eval-source-map",
   target: "web", // Make web variables accessible to webpack, e.g. window
   performance: {},
-
-  // devtool: "source-map",
 };
