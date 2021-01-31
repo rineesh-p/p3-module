@@ -3,8 +3,9 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
-const TerserPlugin = require('terser-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const path = require("path");
 
@@ -156,6 +157,14 @@ module.exports = {
       hashFunction: "sha256",
       hashDigest: "hex",
       hashDigestLength: 20,
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "./", "game", "assets/"),
+          to: path.resolve(__dirname, "./", "dist", "assets/"),
+        },
+      ],
     }),
   ],
   module: {

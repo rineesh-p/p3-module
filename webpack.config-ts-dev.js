@@ -8,10 +8,10 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 // const WebpackPwaManifest = require('webpack-pwa-manifest');
 // const OfflinePlugin = require('offline-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  //    mode: 'production',
 
   context: path.resolve(__dirname, "./"),
 
@@ -48,7 +48,7 @@ module.exports = {
         sourceMap: true,
       }),
     ],
-    nodeEnv: "production",
+    nodeEnv: "development",
     sideEffects: true,
     concatenateModules: true,
     runtimeChunk: "single",
@@ -91,6 +91,9 @@ module.exports = {
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: "development",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: path.resolve (__dirname,"./","game","assets/"), to: path.resolve(__dirname, "./", "build", "assets/")}],
     }),
   ],
   module: {

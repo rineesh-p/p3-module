@@ -4,18 +4,8 @@
         "module": "esnext",
         "target": "esnext",
         "allowJs": true,
-        "sourceMap": true,
-
-        "baseUrl": ".",
-        "paths": {
-            // "phaser3":["./lib/phaser.ts"],
-        }
+        "sourceMap": true
     },
     "include": ["game/*"],
     "exclude": ["node_modules", "**/*.spec.ts"]
 }
-
-// How to add global typedefs 
-// clean all
-// add prod
-// compare size
